@@ -4,9 +4,18 @@ import Filter from "./Filter/Filter";
 import css from "components/App.module.css";
 import { useSelector } from "react-redux";
 import { getStateContacts } from "redux/selectors";
+import { useEffect } from 'react';
+import { fetchContacts } from 'redux/operations';
+import { useDispatch } from 'react-redux';
 
 const App = () => {
   const contacts = useSelector(getStateContacts);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+        dispatch(fetchContacts());
+    }, [dispatch]);
+    
   return (
       <div>
         <div className={css.box}>

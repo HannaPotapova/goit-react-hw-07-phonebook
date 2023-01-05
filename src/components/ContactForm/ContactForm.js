@@ -23,7 +23,7 @@ function ContactForm() {
         dispatch(
             addContact({
                 name: forms.name.value,
-                phone: forms.phone.value,
+                phone: forms.number.value,
                 id: nanoid(),
             })
         );
@@ -48,7 +48,7 @@ function ContactForm() {
                 Number
                 <input
                     type="tel"
-                    name="phone"
+                    name="number"
                     pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                     title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
                     placeholder="000-000-00-00"

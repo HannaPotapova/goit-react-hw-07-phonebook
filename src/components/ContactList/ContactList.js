@@ -6,7 +6,7 @@ import { getStateContacts, getStateFilter } from 'redux/selectors';
 const ContactList = () => {
     const contactsList = useSelector(getStateContacts);
     const filterValue = useSelector(getStateFilter);
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();    
 
     const getFilterContact = () => {
         if (filterValue === '') {
@@ -24,8 +24,8 @@ const ContactList = () => {
         <ul>
             {filterContacts?.map(({ id, name, phone }) => (
                     <li key={id} className={css.item}>
-                        {name}: {phone}
-                        <button type='submit' onClick={() => dispatch(deleteContact(id))}>Delete</button>
+                        {name}:<br/> {phone}
+                        <button type='submit' className={css.button_del} onClick={() => dispatch(deleteContact(id))}>Delete</button>
                     </li>
                 ))}
         </ul>
