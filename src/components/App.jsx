@@ -3,10 +3,10 @@ import ContactList from "./ContactList/ContactList";
 import Filter from "./Filter/Filter";
 import css from "components/App.module.css";
 import { useSelector } from "react-redux";
-import { stateContacts } from "redux/contactSlice";
+import { getStateContacts } from "redux/selectors";
 
 const App = () => {
-  const contacts = useSelector(stateContacts);
+  const contacts = useSelector(getStateContacts);
   return (
       <div>
         <div className={css.box}>
